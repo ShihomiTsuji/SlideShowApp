@@ -85,6 +85,9 @@ class ViewController: UIViewController {
         let zoomViewController:ZoomViewController = segue.destination as! ZoomViewController
         // 遷移先のZoomViewControllerで宣言しているzoomImgに値を代入して渡す
         zoomViewController.zoomImg = images[number]
+        //タップ時にタイマーを削除
+        timer?.invalidate()
+        timer = nil
     }
 
     @IBAction func unwind(_ segue: UIStoryboardSegue){
