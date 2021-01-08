@@ -22,7 +22,16 @@ class ViewController: UIViewController {
     
     // 拡大する画像を宣言
     var zoomImg: UIImage?
-  
+    
+    // 進むボタン
+    @IBOutlet weak var nextButton: UIButton!
+    
+    // 戻るボタン
+    @IBOutlet weak var backButton: UIButton!
+    
+    //再生・停止ボタン
+    @IBOutlet weak var startStopButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -37,9 +46,19 @@ class ViewController: UIViewController {
     @IBAction func startStop(_ sender: Any) {
         if timer == nil {
             self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(changeImage(_:)), userInfo: nil, repeats: true)
+            //進む、戻るボタンの押下不可
+            nextButton.isEnabled = false
+            backButton.isEnabled = false
+            //ボタンの表示変更
+            startStopButton.setTitle("停止", for: .normal)
         } else {
             timer?.invalidate()
             timer = nil
+            //進む、戻るボタンの押下可
+            nextButton.isEnabled = true
+            backButton.isEnabled = true
+            //ボタンの表示変更
+            startStopButton.setTitle("再生", for: .normal)
         }
     }
 
@@ -88,6 +107,11 @@ class ViewController: UIViewController {
         //タップ時にタイマーを削除
         timer?.invalidate()
         timer = nil
+        //進む、戻るボタンの押下可
+        nextButton.isEnabled = true
+        backButton.isEnabled = true
+        //ボタンの表示変更
+        startStopButton.setTitle("再生", for: .normal)
     }
 
     @IBAction func unwind(_ segue: UIStoryboardSegue){

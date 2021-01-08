@@ -45,9 +45,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ezq-Az-nY9">
-                                <rect key="frame" x="285.66666666666669" y="674" width="79" height="34"/>
+                                <rect key="frame" x="285.66666666666669" y="674" width="37" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="再生/停止"/>
+                                <state key="normal" title="再生"/>
                                 <connections>
                                     <action selector="startStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2G3-lm-Qlk"/>
                                 </connections>
@@ -69,7 +69,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="uzW-58-JAf" id="Qa5-t8-rx0"/>
                         <outlet property="imageView" destination="xf7-O4-dVb" id="FSv-hN-fp5"/>
+                        <outlet property="nextButton" destination="kE4-9A-kfT" id="oaE-2O-wbp"/>
+                        <outlet property="startStopButton" destination="Ezq-Az-nY9" id="Tcb-Ia-5PG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
